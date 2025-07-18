@@ -1,6 +1,5 @@
 try:
-        size_str = input("Enter the size of the pattern: ")
-        size = int(size_str)
+        size = int(input("Enter the size of the pattern: "))
 
         if size <= 0:
             print("Please enter a positive integer for the pattern size.")
@@ -16,5 +15,5 @@ try:
 except ValueError:
         print("Invalid input. Please enter a whole number.")
 except Exception as e:
-        print(f"An unexpected error occurred: {e}") 
+        print(f"An unexpected error occurred: {e}")
 
