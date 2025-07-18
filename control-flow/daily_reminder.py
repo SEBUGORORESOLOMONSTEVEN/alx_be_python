@@ -13,18 +13,28 @@ else:
         print("Invalid input for 'Is it time-bound?'. Please answer 'yes' or 'no'.")
         
 
+    # Initialize a base message without the "Reminder:" or "Note:" prefix
+base_message_content = ""
+is_note_case = False # Flag to distinguish the "Note:" specific output
+
 match priority:
         case "high":
-            reminder = f"Reminder: '{task}' is a high priority task{time_sensitive_message}"
+            base_message_content = f"'{task}' is a high priority task{time_sensitive_message}"
         case "medium":
-            reminder = f"Reminder: '{task}' is a medium priority task{time_sensitive_message}"
+            base_message_content = f"'{task}' is a medium priority task{time_sensitive_message}"
         case "low":
             if time_bound == "no":
-                reminder = f"Note: '{task}' is a low priority task. Consider completing it when you have free time."
+                base_message_content = f"'{task}' is a low priority task. Consider completing it when you have free time."
+                is_note_case = True # Set flag for the "Note:" case
             else:
-                reminder = f"Reminder: '{task}' is a low priority task{time_sensitive_message}"
+                base_message_content = f"'{task}' is a low priority task{time_sensitive_message}"
         case _:
             print("Invalid priority. Please choose from high, medium, or low.")
             
 
-print(reminder)
+    # Now, print the final reminder with the correct prefix
+if is_note_case:
+        print(f"Note: {base_message_content}")
+else:
+        # This print statement now explicitly starts with f"Reminder:"
+        print(f"Reminder: {base_message_content}")
