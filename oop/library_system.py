@@ -79,7 +79,6 @@ class Library:
         This method demonstrates composition, as a Library is "composed of" Book objects.
         """
         self.books.append(book)
-        print(f"Added '{book.title}' to the library.")
 
     def list_books(self):
         """
@@ -94,4 +93,5 @@ class Library:
                 print(f"PrintBook: {book}")
             else:
                 print(f"Book: {book}")
+
 
