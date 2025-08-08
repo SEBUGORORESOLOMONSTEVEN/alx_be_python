@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 book_class.py
@@ -26,7 +25,7 @@ class Book:
         self.title = title
         self.author = author
         self.year = year
-        print(f"Creating a new book: {self.title}")
+        # The print statement has been removed to match the expected output.
 
     def __del__(self):
         """
@@ -49,5 +48,3 @@ class Book:
         """
         return f"Book('{self.title}', '{self.author}', {self.year})"
 
-# Note: The main execution block is in the separate main.py file as per the instructions.
-# This file only contains the class definition.
