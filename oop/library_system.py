@@ -85,7 +85,6 @@ class Library:
         Prints the details of each book currently in the library,
         demonstrating polymorphism and checking the object's type.
         """
-        print("--- Books in the Library ---")
         for book in self.books:
             if isinstance(book, EBook):
                 print(f"EBook: {book}")
