@@ -2,28 +2,23 @@
 """
 main.py
 
-This script tests the functionality of the classes in library_system.py
-by adding different types of books to a Library instance and listing them.
+This script tests the functionality of the classes in polymorphism_demo.py
+by creating instances of Rectangle and Circle and invoking their area() method.
 """
 
-from library_system import Book, EBook, PrintBook, Library
+from polymorphism_demo import Shape, Rectangle, Circle
+import math
 
 def main():
-    # Create a Library instance
-    my_library = Library()
+    # Create a list of different shape objects
+    shapes = [
+        Rectangle(10, 5),
+        Circle(7)
+    ]
 
-    # Create instances of each type of book
-    classic_book = Book("Pride and Prejudice", "Jane Austen")
-    digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
-    paper_novel = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
-
-    # Add books to the library
-    my_library.add_book(classic_book)
-    my_library.add_book(digital_novel)
-    my_library.add_book(paper_novel)
-
-    # List all books in the library
-    my_library.list_books()
+    # Iterate through the list and calculate the area for each shape
+    for shape in shapes:
+        print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
 
 if __name__ == "__main__":
     main()
